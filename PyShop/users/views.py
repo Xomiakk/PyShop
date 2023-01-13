@@ -6,7 +6,8 @@ from django.contrib.auth import authenticate, login
 
 class Register(View):
 
-	template_name = 'registration/register.html'
+	#template_name = 'registration/register.html'
+	template_name = 'account/signup.html'
 
 	def get(self, request):
 		context = {
