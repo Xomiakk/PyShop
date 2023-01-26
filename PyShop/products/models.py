@@ -20,7 +20,7 @@ class Product(models.Model):
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, blank=True, null=True, default=None)
-    image = models.ImageField(upload_to='products_images/')
+    image = models.ImageField(upload_to='static/media/products_images/')
     is_main = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
