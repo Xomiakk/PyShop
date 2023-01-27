@@ -14,13 +14,13 @@ class Product(models.Model):
         return "%s, %s" % (self.price, self.name)
 
     class Meta:
-        verbose_name = 'Товар'
-        verbose_name_plural = 'Товари'
+        verbose_name = "Товар"
+        verbose_name_plural = "Товари"
 
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, blank=True, null=True, default=None)
-    image = models.ImageField(upload_to='static/media/products_images/')
+    image = models.ImageField(upload_to="users/static/media/products_images/")
     is_main = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
@@ -30,5 +30,5 @@ class ProductImage(models.Model):
         return "%s" % self.id
 
     class Meta:
-        verbose_name = 'Фотографія'
-        verbose_name_plural = 'Фотографії'
+        verbose_name = "Фотографія"
+        verbose_name_plural = "Фотографії"

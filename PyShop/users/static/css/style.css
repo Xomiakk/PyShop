@@ -1,0 +1,82 @@
+body{
+	background-color: rgb(236, 236, 236);
+}
+
+.wrapper{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.header{
+	margin-bottom: 30px;
+}
+
+.pyshop{
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+.footer{
+	flex: 0 0 auto;
+	width: 100%;
+}
+
+.product-item{
+	position: relative;
+	height: 400px;
+	margin-bottom: 30px;
+	background-color: white;
+	padding-top: 10px;
+	border-radius: 10px;
+	border: solid 1px lightgray;
+}
+
+.div_img{
+	height: 230px;
+	display: flex;
+}
+
+.img-responsive{
+	width: 90%;
+	max-height: 230px;
+	margin: auto;
+}
+
+.productName{
+	width: 100%;
+	position: absolute;
+	bottom: 115px;
+}
+
+.name{
+	text-align: center;
+}
+
+.descr{
+	font-size: small;
+	padding: 10px;
+	text-align: justify;
+	position: absolute;
+	bottom: 50px;
+	line-height: 15px;
+}
+
+.price{
+	font-weight: 700;
+	font-size: large;
+	position: absolute;
+	bottom: 25px;
+	margin-left: 10px;
+}
+
+.add-to-card-btn{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.addToCard{
+	width: 100%;
+}
+
