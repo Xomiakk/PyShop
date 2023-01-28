@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from products.models import *
 
-# Create your views here.
+def basket(request):
+    
+    return render(request, 'basket/basket.html', locals())
