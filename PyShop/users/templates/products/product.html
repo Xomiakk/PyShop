@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6">
+			{% for image_item in product.productimage_set.all %}
+			<div class="product-image-item">
+				<img src="{{ image_item.image.url }}" class="img-responsive-product">
+			</div>
+			{% endfor %}
+		</div>
+		<div class="col-lg-6">
+			<h1 class="text-center name_product_page">
+				{{ product.name }}
+			</h1>
+			<div class="">
+				<p>
+					Ціна: {{ product.price }} UAH
+				</p>
+			</div>
+			<hr>
+			<div>
+				<!-- Tab panes -->
+				<div class="tab-content product-description-tabs">
+					<div role="tabpanel" class="tab-pane active" id="description">
+						{{ product.description }}
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div>
+				<form id="form_buying_product" class="form-inline" action="{% url 'basket_adding' %}">{% csrf_token %}
+					<div class="form-group form_product">
+						<input type="number" class="form-control form-control-product" name="number" id="number" min="1">
+					</div>
+					<div class="form-group form_product">
+						<button type="submit" id="submit_btn" class="btn btn-success btn-buy"
+							data-product_id="{{ product.id }}" data-name="{{ product.name }}"
+							data-price="{{ product.price }}">
+							Додати в корзину
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

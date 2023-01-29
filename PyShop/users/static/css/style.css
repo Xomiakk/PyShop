@@ -12,6 +12,10 @@ body{
 	margin-bottom: 30px;
 }
 
+.basket_link{
+	margin-right: 50px;
+}
+
 .pyshop{
 	padding-left: 100px;
 	padding-right: 100px;
@@ -24,7 +28,7 @@ body{
 
 .product-item{
 	position: relative;
-	height: 400px;
+	height: 370px;
 	margin-bottom: 30px;
 	background-color: white;
 	padding-top: 10px;
@@ -46,7 +50,7 @@ body{
 .productName{
 	width: 100%;
 	position: absolute;
-	bottom: 115px;
+	bottom: 85px;
 }
 
 .name{
@@ -58,7 +62,7 @@ body{
 	padding: 10px;
 	text-align: justify;
 	position: absolute;
-	bottom: 50px;
+	bottom: 20px;
 	line-height: 15px;
 }
 
@@ -66,17 +70,33 @@ body{
 	font-weight: 700;
 	font-size: large;
 	position: absolute;
-	bottom: 25px;
+	bottom: 0px;
 	margin-left: 10px;
 }
 
-.add-to-card-btn{
-	position: absolute;
-	bottom: 0;
+.product-image-item{
+	margin-bottom: 25px;
+}
+
+.img-responsive-product{
+	display: block;
 	width: 100%;
 }
 
-.addToCard{
-	width: 100%;
+.name_product_page{
+	margin-bottom: 30px;
 }
 
+.form_product{
+	float: left;
+	margin-top: 15px;
+}
+
+.form-control-product{
+	width: 100px;
+	margin-right: 5px;
+}
+
+.form_payment{
+	margin-bottom: 20px;
+}

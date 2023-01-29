@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<h3 class="text-center">Оформлення замовлення</h3>
+			<h5 class="text-center">Введіть свої дані:</h5>
+			<div class="col-lg-6">
+				<form method="post"> {% csrf_token %}
+				  <div class="form-group">
+					<label>ПІБ замовника:</label>
+					<input type="text" class="form-control form_payment" placeholder="Введіть ПІБ замовника" name="name">
+				  </div>
+				  <div class="form-group">
+					<label>Номер телефону:</label>
+					<input type="text" class="form-control form_payment" placeholder="Введіть номер телефону" name="phone">
+				  </div>
+				  <div class="form-group">
+					<label for="exampleInputEmail1">Email:</label>
+					<input type="email" class="form-control form_payment" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введіть email" name="email">
+				  </div>
+				  <div class="form-group">
+					<label>Відділення нової пошти:</label>
+					<input type="text" class="form-control form_payment" placeholder="Місто, номер відділення" name="address">
+				  </div>
+				  <table class="table text-center">
+					<thead>
+						<tr>
+							<th>Назва товару</th>
+							<th>Кількість</th>
+							<th>Ціна за одиницю</th>
+							<th>Загальна вартість</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for product_in_basket in products_in_basket %}
+						<tr>
+							<td>
+								{{ product_in_basket.product.name }}
+							</td>
+							<td>
+								<input value="{{ product_in_basket.nmb }}" type="number" min="0"
+									class="product-in-basket-nmb" name="product_in_basket_{{ product_in_basket.id }}">
+							</td>
+							<td>
+								<span class="product-price">
+									{{ product_in_basket.price_per_item}}
+								</span>
+							</td>
+							<td>
+								<span class="total-product-in-basket-amount">
+									{{ product_in_basket.total_price }}
+								</span>
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>				  
+				  <button type="submit" class="btn btn-primary">Оплатити</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
